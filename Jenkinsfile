@@ -18,8 +18,6 @@ pipeline {
         dir("jar") {
           unstash "jar"
         }
-        sh "ls -lR jar"
-        sh "ls -la *"
         sh "docker build -t naveen ."
       }
     }
