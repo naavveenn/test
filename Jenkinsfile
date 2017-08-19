@@ -12,10 +12,8 @@ pipeline {
         stash name: "jar", includes: "target/*.jar"
       }
     }
-  }
-  stages {
-    agent any
-    stage('Docker Build') {
+   stage('Docker Build') {
+      agent any
       steps {
         dir("jar") {
           unstash "jar"
@@ -24,5 +22,4 @@ pipeline {
         sh "docker build -t naveen ."
       }
     }
-  }
 }
