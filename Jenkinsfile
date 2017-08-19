@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven:3-jdk-5'
+    }
+    
+  }
   stages {
-    stage('test1') {
+    stage('Build') {
       steps {
-        echo 'hello'
+        sh 'mvn package'
       }
     }
   }
