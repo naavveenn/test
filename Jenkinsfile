@@ -22,4 +22,5 @@ pipeline {
         sh "docker build -t naveen ."
       }
     }
+  }
 }
